@@ -94,9 +94,13 @@ Rails.application.routes.draw do
     delete 'logout'  => 'sessions#destroy'
     get    'userappointment' => 'users#appointment'
 
-    resources :users 
+    resources :users
+
+    get 'admin_page' => 'users#admin_page'
+    get 'doctor_page' => 'users#doctor_page'
+    get 'patient_page' => 'users#patient_page'
+
     resources :account_activations, only: [:edit]
     resources :password_resets,     only: [:new, :create, :edit, :update]
-
 
 end
